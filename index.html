@@ -1,0 +1,397 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Ruth Thalia Huaraca Guzmán | Perfil Profesional</title> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #D96B27;
+      --secondary: #E07A5F;
+      --bg-main: #F9F6F0;
+      --bg-card: #FFFFFF;
+      --bg-accent: #F4EFE6;
+      --text: #2B2D42;
+      --text-muted: #5C6274;
+      --border: #E2D9CC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text); line-height: 1.6; }
+    
+    /* NAV */
+    nav { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      padding: 0.8rem 1.5rem; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      gap: 1.5rem; 
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--primary); text-decoration: none; white-space: nowrap; }
+    .links { display: flex; gap: 1.5rem; list-style: none; }
+    .links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; }
+    .links a:hover { color: var(--primary); }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #FFFDF9 0%, #F4EFE6 100%); border-bottom: 1px solid var(--border); padding: 3rem 1.5rem; }
+    .hero-inner { max-width: 1000px; margin: 0 auto; }
+    .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .badge { padding: 0.35rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .b-p { background: rgba(217,107,39,0.12); color: var(--primary); border: 1px solid rgba(217,107,39,0.3); }
+    .b-s { background: rgba(224,122,95,0.12); color: #B84A2A; border: 1px solid rgba(224,122,95,0.3); }
+    .b-a { background: #2E7D32; color: #FFF; }
+    
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 0.2rem; }
+    .sub { font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
+    .bio { color: var(--text-muted); font-size: 0.98rem; text-align: justify; margin-bottom: 1.8rem; }
+
+    /* CONTACTO RESALTADO */
+    .contact-box { background: #FFF; border-left: 4px solid var(--primary); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; }
+    .c-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); font-weight: 700; margin-bottom: 0.6rem; }
+    .c-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .c-item { display: flex; align-items: center; gap: 0.6rem; }
+    .c-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(217,107,39,0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+    .c-lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; display: block; }
+    .c-val { font-size: 0.88rem; font-weight: 600; color: var(--text); word-break: break-all; }
+
+    /* MAIN */
+    main { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    .sec-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+    .sec-title i { color: var(--primary); }
+
+    /* CARDS */
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; }
+    .c-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
+    .role { font-size: 1.1rem; font-weight: 700; }
+    .company { color: var(--primary); font-weight: 600; font-size: 0.95rem; }
+    .date { background: var(--bg-accent); color: var(--text-muted); font-size: 0.8rem; padding: 0.25rem 0.6rem; border-radius: 20px; font-weight: 500; height: fit-content; }
+    
+    ul.tasks { list-style: none; margin-bottom: 0.8rem; }
+    ul.tasks li { position: relative; padding-left: 1.2rem; margin-bottom: 0.4rem; font-size: 0.9rem; }
+    ul.tasks li::before { content: '•'; color: var(--primary); font-size: 1.2rem; position: absolute; left: 0.2rem; top: -0.2rem; }
+    
+    .contrib { background: rgba(244,239,230,0.6); border-radius: 6px; padding: 0.8rem; border-left: 3px solid var(--secondary); font-size: 0.88rem; }
+    .contrib-t { font-weight: 700; color: var(--secondary); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.2rem; }
+
+    /* TABS */
+    .tabs-head { display: flex; gap: 0.5rem; border-bottom: 2px solid var(--border); margin-bottom: 1rem; }
+    .tab-btn { padding: 0.6rem 1rem; background: none; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); cursor: pointer; }
+    .tab-btn.active { color: var(--primary); border-bottom: 2px solid var(--primary); margin-bottom: -2px; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .s-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .s-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+    .s-title { font-weight: 700; color: var(--primary); font-size: 0.95rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem; }
+    .s-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* GRID 2 COL */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .item-row { padding-bottom: 0.8rem; margin-bottom: 0.8rem; border-bottom: 1px solid var(--bg-accent); }
+    .item-row:last-child { border: none; margin: 0; padding: 0; }
+    .i-title { font-weight: 600; font-size: 0.9rem; }
+    .i-sub { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* CAPACITACIONES HORIZONTALES AMPLIAS */
+    .cap-list { display: flex; flex-direction: column; gap: 0.8rem; }
+    .cap-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; display: flex; align-items: center; gap: 1rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .cap-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .cap-card:nth-child(odd) { border-left: 4px solid var(--primary); }
+    .cap-card:nth-child(even) { border-left: 4px solid var(--secondary); }
+    .cap-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.95rem; }
+    .cap-card:nth-child(odd) .cap-icon { background: rgba(217,107,39,0.1); color: var(--primary); }
+    .cap-card:nth-child(even) .cap-icon { background: rgba(224,122,95,0.1); color: var(--secondary); }
+    .cap-info { display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+
+    footer { text-align: center; padding: 1.5rem; background: var(--bg-card); border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem; }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      .links { display: none; }
+      .cap-info { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">Ruth Huaraca G.</a>
+      <ul class="links">
+        <li><a href="#exp">Experiencia</a></li>
+        <li><a href="#comp">Competencias</a></li>
+        <li><a href="#edu">Formación</a></li>
+        <li><a href="#cap">Capacitaciones</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badges">
+        <span class="badge b-p"><i class="fa-solid fa-scale-balanced"></i> Derecho Registral, Notarial y Civil</span>
+        <span class="badge b-s"><i class="fa-solid fa-graduation-cap"></i> X Ciclo - UCSUR</span>
+        <span class="badge b-a"><i class="fa-solid fa-circle-check"></i> Disponibilidad Inmediata</span>
+      </div>
+
+      <h1>Ruth Thalia Huaraca Guzmán</h1>
+      <div class="sub">Perfil Profesional en Derecho Notarial y Registral</div>
+      
+      <p class="bio">
+        Estudiante de décimo ciclo de Derecho de la Universidad Científica del Sur, con experiencia en derecho notarial, orientada principalmente a la redacción y revisión jurídica de documentos protocolares y extraprotocolares. Además, cuento con conocimientos en materia registral y procedimientos no contencioso (sucesión intestada, unión de hecho, rectificación de partida). Destaco por mi responsabilidad, organización, capacidad de análisis y atención al detalle.
+      </p>
+
+      <div class="contact-box">
+        <div class="c-title"><i class="fa-solid fa-address-card"></i> Datos de Contacto Directo</div>
+        <div class="c-grid">
+          <div class="c-item">
+            <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+            <div><span class="c-lbl">Teléfono</span><span class="c-val">+51 906 366 665</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div><span class="c-lbl">Correo Electrónico</span><span class="c-val">ruththaliahuaraca@gmail.com</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div><span class="c-lbl">LinkedIn</span><span class="c-val">linkedin.com/in/ruththaliahuaraca</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- EXPERIENCIA -->
+    <section id="exp" style="margin-bottom: 2.5rem;">
+      <h2 class="sec-title"><i class="fa-solid fa-briefcase"></i> Experiencia Laboral</h2>
+
+      <div class="card">
+        <div class="c-head">
+          <div>
+            <div class="role">Practicante Preprofesional - Área Legal</div>
+            <div class="company">Notaría Chuquiure Valenzuela</div>
+          </div>
+          <span class="date">Agosto 2025 - Actualidad</span>
+        </div>
+        <ul class="tasks">
+          <li>Revisión y redacción de petitorios no contenciosos: sucesiones intestadas, unión de hecho, rectificación de partida.</li>
+          <li>Apoyo en preparación de escrituras públicas: compraventa, donación, anticipo de legítima, otorgamiento de poderes.</li>
+          <li>Redacción de instrumentos extraprotocolares: permisos de viaje, poder fuera de registro, copias certificadas.</li>
+          <li>Revisión de contratos privados, actos corporativos (asambleas, juntas) y apertura de libros contables/actas.</li>
+        </ul>
+        <div class="contrib">
+          <div class="contrib-t"><i class="fa-solid fa-star"></i> Aportes:</div>
+          Optimización de procedimientos internos notariales, reducción de errores materiales y fortalecimiento de la seguridad jurídica mediante revisión documental.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="c-head">
+          <div>
+            <div class="role">Asistente Legal</div>
+            <div class="company">Estudio Jurídico Calagua & Molina</div>
+          </div>
+          <span class="date">Febrero - Agosto 2025</span>
+        </div>
+        <ul class="tasks">
+          <li>Seguimiento de expedientes judiciales en materia civil.</li>
+          <li>Diligenciamiento de oficios ante el Poder Judicial y organismos públicos (RENIEC, SUNARP, Municipalidades).</li>
+          <li>Presentación de escritos mediante el sistema SINOE del Poder Judicial.</li>
+        </ul>
+        <div class="contrib">
+          <div class="contrib-t"><i class="fa-solid fa-star"></i> Aportes:</div>
+          Optimización del seguimiento procesal y control documental de casos, reduciendo riesgos de vencimiento de plazos.
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIAS -->
+    <section id="comp" style="margin-bottom: 2.5rem;">
+      <h2 class="sec-title">
+        <i class="fa-solid fa-gears"></i> Competencias & Habilidades
+      </h2>
+
+      <div class="tabs-head">
+        <button class="tab-btn active" onclick="tab(event, 'l')">
+          Competencias Legales
+        </button>
+        <button class="tab-btn" onclick="tab(event, 'b')">
+          Habilidades Interpersonales
+        </button>
+        <button class="tab-btn" onclick="tab(event, 'i')">
+          Idiomas y Software
+        </button>
+      </div>
+
+      <!-- COMPETENCIAS LEGALES -->
+      <div id="l" class="tab-content active">
+        <div class="s-grid">
+          <div class="s-card">
+            <div class="s-title">
+              <i class="fa-solid fa-pen-nib"></i> Redacción Jurídica
+            </div>
+            <div class="s-desc">
+              Elaboración y revisión de instrumentos protocolares, extraprotocolares y documentos legales.
+            </div>
+          </div>
+
+          <div class="s-card">
+            <div class="s-title">
+              <i class="fa-solid fa-magnifying-glass"></i> Análisis Legal & Calificación
+            </div>
+            <div class="s-desc">
+              Revisión documental conforme a la base legal e identificación de observaciones para su subsanación.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HABILIDADES INTERPERSONALES -->
+      <div id="b" class="tab-content">
+        <div class="s-grid">
+          <div class="s-card">
+            <div class="s-title">
+              <i class="fa-solid fa-comments"></i> Comunicación Efectiva
+            </div>
+            <div class="s-desc">
+              Capacidad para transmitir información de manera clara, precisa y profesional.
+            </div>
+          </div>
+
+          <div class="s-card">
+            <div class="s-title">
+              <i class="fa-solid fa-users"></i> Trabajo en Equipo
+            </div>
+            <div class="s-desc">
+              Coordinación activa con el personal notarial para el desarrollo eficiente de los procedimientos.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IDIOMAS Y SOFTWARE -->
+      <div id="i" class="tab-content">
+        <div class="s-grid">
+          <div class="s-card">
+            <div class="s-title">
+              <i class="fa-solid fa-language"></i> Inglés Avanzado
+            </div>
+            <div class="s-desc">
+              Británico: Advanced 6 - Upper Intermediate. Equivalencia B2 Cambridge.
+            </div>
+          </div>
+
+          <div class="s-card">
+            <div class="s-title">
+              <i class="fa-solid fa-laptop-code"></i> Herramientas Digitales
+            </div>
+            <div class="s-desc">
+              Microsoft Office: nivel básico.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMACION Y DISTINCIONES -->
+    <div class="grid-2">
+      <section id="edu">
+        <h2 class="sec-title"><i class="fa-solid fa-graduation-cap"></i> Formación</h2>
+        <div class="card">
+          <div class="item-row">
+            <div class="i-title">Estudiante de Derecho (X Ciclo)</div>
+            <div class="i-sub">Universidad Científica del Sur</div>
+            <div class="i-sub" style="color: var(--primary); font-weight: 500;">Egreso estimado: Diciembre 2026</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dis">
+        <h2 class="sec-title"><i class="fa-solid fa-award"></i> Distinciones</h2>
+        <div class="card">
+          <div class="item-row">
+            <div class="i-title">Miembro del Taller de Derecho Registral, Notarial e Inmobiliario</div>
+            <div class="i-sub">UNMSM (2026)</div>
+          </div>
+          <div class="item-row">
+            <div class="i-title">Participación en Desafío Arbitral 8° edición</div>
+            <div class="i-sub">Universidad Católica de San Pablo (2024-1)</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CAPACITACIONES -->
+    <section id="cap" style="margin-top: 2rem;">
+      <h2 class="sec-title"><i class="fa-solid fa-certificate"></i> Capacitaciones</h2>
+      <div class="cap-list">
+        
+        <div class="cap-card">
+          <div class="cap-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="cap-info">
+            <div>
+              <div class="i-title">I Seminario de Due Diligence Inmobiliario</div>
+              <div class="i-sub">Asociación Civil Derecho & Sociedad - PUCP</div>
+            </div>
+            <span class="date">Agosto 2026</span>
+          </div>
+        </div>
+
+        <div class="cap-card">
+          <div class="cap-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="cap-info">
+            <div>
+              <div class="i-title">II Congreso Nacional e Internacional de Derecho Ambiental</div>
+              <div class="i-sub">Universidad Científica del Sur y SPDA</div>
+            </div>
+            <span class="date">Junio 2026</span>
+          </div>
+        </div>
+
+        <div class="cap-card">
+          <div class="cap-icon"><i class="fa-solid fa-certificate"></i></div>
+          <div class="cap-info">
+            <div>
+              <div class="i-title">I Congreso Nacional e Internacional de Derecho Ambiental</div>
+              <div class="i-sub">UCSUR, CSM Grau y SPDA</div>
+            </div>
+            <span class="date">Junio 2024</span>
+          </div>
+        </div>
+
+        <div class="cap-card">
+          <div class="cap-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="cap-info">
+            <div>
+              <div class="i-title">Opinión Consultiva sobre Cambio Climático</div>
+              <div class="i-sub">Alianza de Clínicas Jurídicas de ALC / UCSUR, CSM Grau y SPDA</div>
+            </div>
+            <span class="date">Junio 2024</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Ruth Thalia Huaraca Guzmán - Perfil Profesional Jurídico</p>
+  </footer>
+
+  <script>
+    function tab(e, name) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(name).classList.add('active');
+      e.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
